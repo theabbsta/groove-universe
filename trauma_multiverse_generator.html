@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abbey's Mega Goofy Silly Whimsical Emporium Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'RepoFont';
+      src: local('Segoe UI Emoji'), local('Apple Color Emoji'), local('Noto Color Emoji');
+    }
+
+    body {
+      font-family: 'RepoFont', sans-serif;
+      background: radial-gradient(circle at top left, #ffe4fb, #d6f9ff);
+      padding: 2em;
+      color: #222;
+      background-image: url('https://emojicdn.elk.sh/🧃/240');
+      background-repeat: repeat;
+      background-size: 80px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2em;
+      border-radius: 30px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+      border: 3px dashed #ffcdf2;
+    }
+    label, select, input, textarea, button {
+      display: block;
+      width: 100%;
+      margin: 1em 0;
+      font-size: 1.1em;
+      font-family: inherit;
+    }
+    button {
+      background-color: #caffd0;
+      border: 2px solid #333;
+      padding: 0.7em;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    button:hover {
+      background-color: #b0ffbd;
+    }
+    .output {
+      white-space: pre-wrap;
+      background: #fff5fa;
+      padding: 1.5em;
+      border-radius: 20px;
+      margin-top: 2em;
+      border: 2px solid #ffc4e1;
+      font-family: monospace;
+    }
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    p {
+      text-align: center;
+      font-style: italic;
+      margin-top: -10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧃 Abbey’s Mega Goofy Silly Whimsical Generator 🧃</h1>
+    <p>turn your trauma into a multiverse character. no therapy required*</p>
+
+    <label for="trauma">🧠 what's your core trauma?</label>
+    <input id="trauma" type="text" placeholder="e.g. abandonment, grief, masking">
+
+    <label for="coping">🌿 how do you cope?</label>
+    <input id="coping" type="text" placeholder="e.g. weed, art, avoidance naps">
+
+    <label for="aesthetic">✨ describe your current aesthetic</label>
+    <input id="aesthetic" type="text" placeholder="e.g. sad indie witch with a vape">
+
+    <button onclick="generateOutput()">🎲 generate your multiverse self 🎲</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    function generateOutput() {
+      const trauma = document.getElementById("trauma").value;
+      const coping = document.getElementById("coping").value;
+      const aesthetic = document.getElementById("aesthetic").value;
+
+      const nameOptions = ["Vespertine", "Cradle", "Lunelle", "Gloomina", "Thorn", "Marrow", "Softjaw"];
+      const worldOptions = ["Shame Moors", "Looplands", "Neurospice Realms", "Masker’s Valley", "Grief Plateau"];
+      const familiarOptions = ["beige dog of safety", "zebra bedsheet oracle", "cat who knows your sins", "floating vape cloud"];
+
+      const name = nameOptions[Math.floor(Math.random() * nameOptions.length)] + " " + nameOptions[Math.floor(Math.random() * nameOptions.length)];
+      const world = worldOptions[Math.floor(Math.random() * worldOptions.length)];
+      const familiar = familiarOptions[Math.floor(Math.random() * familiarOptions.length)];
+
+      const output = `✨ CHARACTER PROFILE ✨\n\nName: ${name}\nRealm: ${world}\nFamiliar: ${familiar}\n\nCore Trauma: ${trauma}\nCoping Style: ${coping}\nAesthetic Aura: ${aesthetic}\n\n🪄 Primary Spell: \"Dissociative Blinkstep\" — teleport 3ft by spacing out hard enough\n🧷 Curse: The Algorithmic Mirror — shows only your worst self-image until you show someone your art without apologizing.`;
+
+      document.getElementById("output").innerText = output;
+    }
+  </script>
+</body>
+</html>
